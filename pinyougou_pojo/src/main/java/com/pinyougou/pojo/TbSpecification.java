@@ -1,7 +1,7 @@
 package com.pinyougou.pojo;
 
-import java.io.Serializable;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "tb_specification")
 public class TbSpecification implements Serializable {
@@ -45,6 +45,10 @@ public class TbSpecification implements Serializable {
      */
     public String getSpecName() {
         return specName;
+    }
+
+    public String getText() {
+        return this.specName;
     }
 
     /**

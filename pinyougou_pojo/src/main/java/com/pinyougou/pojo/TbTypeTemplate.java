@@ -1,7 +1,7 @@
 package com.pinyougou.pojo;
 
-import java.io.Serializable;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "tb_type_template")
 public class TbTypeTemplate implements Serializable {
@@ -56,6 +56,7 @@ public class TbTypeTemplate implements Serializable {
     public String getName() {
         return name;
     }
+
 
     /**
      * 设置模板名称

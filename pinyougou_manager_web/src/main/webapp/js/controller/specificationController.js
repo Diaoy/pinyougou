@@ -12,7 +12,7 @@ window.onload=function () {
 			//当前页
 			pageNo:1,
 			//声明对象
-			entity:{},
+			entity:{specification:{},specificationOptionList:[]},
 			//将要删除的id列表
 			ids:[],
 			//搜索包装对象
@@ -43,9 +43,9 @@ window.onload=function () {
 			},
 			//新增
 			add:function () {
-				var url = "../specification/add.do";
-				if(this.entity.id != null){
-					url = "../specification/update.do";
+				var url = "/specification/add.do";
+				if(this.entity.specification.id != null){
+					url = "/specification/update.do";
 				}
 				axios.post(url, this.entity).then(function (response) {
 					if (response.data.success) {
@@ -75,6 +75,12 @@ window.onload=function () {
 						alert(response.data.message);
 					}
 				})
+			},
+			addTableRow:function () {
+				app.entity.specificationOptionList.push({});
+			},
+			deleteTableRow:function (index) {
+				app.entity.specificationOptionList.splice(index,1);
 			}
 		},
 		//Vue对象初始化后，调用此逻辑
