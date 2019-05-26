@@ -1,8 +1,8 @@
 package com.pinyougou.sellergoods.service;
-import java.util.List;
 import com.pinyougou.pojo.TbItemCat;
-
 import entity.PageResult;
+
+import java.util.List;
 /**
  * 业务逻辑接口
  * @author Steven
@@ -50,5 +50,4 @@ public interface ItemCatService {
 	 */
 	public void delete(Long[] ids);
 
-	
 }
