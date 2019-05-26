@@ -246,6 +246,8 @@
                 <artifactId>rocketmq-client</artifactId>
                 <version>${rocketmq.version}</version>
             </dependency>
+
+
             <!--es-->
             <dependency>
                 <groupId>org.elasticsearch</groupId>

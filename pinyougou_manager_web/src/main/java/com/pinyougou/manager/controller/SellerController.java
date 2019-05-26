@@ -1,15 +1,15 @@
 package com.pinyougou.manager.controller;
-import java.util.List;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbSeller;
 import com.pinyougou.sellergoods.service.SellerService;
-
 import entity.PageResult;
 import entity.Result;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 /**
  * 请求处理器
  * @author Steven
@@ -48,6 +48,7 @@ public class SellerController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@RequestBody TbSeller seller){
+
 		try {
 			sellerService.add(seller);
 			return new Result(true, "增加成功");
@@ -79,7 +80,7 @@ public class SellerController {
 	 * @return
 	 */
 	@RequestMapping("/getById")
-	public TbSeller getById(Long id){
+	public TbSeller getById(String id){
 		return sellerService.getById(id);		
 	}
 	
