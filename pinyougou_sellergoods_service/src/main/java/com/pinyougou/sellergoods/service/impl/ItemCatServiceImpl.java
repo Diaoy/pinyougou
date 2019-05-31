@@ -106,6 +106,15 @@ public class ItemCatServiceImpl implements ItemCatService {
         //跟据查询条件删除数据
         itemCatMapper.deleteByExample(example);
 	}
-	
-	
+
+	@Override
+	public List<TbItemCat> findByParentId(Long parentId) {
+
+		TbItemCat where = new TbItemCat();
+		where.setParentId(parentId);
+		List<TbItemCat> itemCats = itemCatMapper.select(where);
+		return itemCats;
+	}
+
+
 }

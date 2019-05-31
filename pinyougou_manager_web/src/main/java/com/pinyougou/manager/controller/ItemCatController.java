@@ -98,5 +98,15 @@ public class ItemCatController {
 			return new Result(false, "删除失败");
 		}
 	}
+
+	/**
+	 * 跟据父ID查询商品分类列表
+	 * @param parentId
+	 * @return
+	 */
+	@RequestMapping(path = "/findByParentId")
+	public List<TbItemCat> findByParentId(Long parentId){
+		return itemCatService.findByParentId(parentId);
+	}
 	
 }
